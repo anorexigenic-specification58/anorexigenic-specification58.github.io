@@ -1,96 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Thinking Better</title>
+    <title>Thinking Better — Athul</title>
 
     <meta name="description"
-          content="Athul's personal website — AI, machine learning, systems, learning and thinking.">
+        content="Athul — Lead AI/ML Engineer exploring intelligent systems, machine learning, problem solving and better ways of thinking.">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 80px 24px;
-            line-height: 1.6;
-            color: #222;
-        }
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            margin-top: 50px;
-        }
-
-        .subtitle {
-            font-size: 22px;
-            color: #666;
+            background: #fafafa;
+            color: #171717;
+            line-height: 1.7;
         }
 
         a {
-            color: #0969da;
+            color: inherit;
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 28px;
         }
 
-        .links {
+        /* ---------------- NAVIGATION ---------------- */
+
+        nav {
+            padding: 28px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .nav-links a:hover {
+            color: #111;
+        }
+
+        /* ---------------- HERO ---------------- */
+
+        .hero {
+            padding: 120px 0 100px;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 82px);
+            line-height: 1.02;
+            letter-spacing: -0.055em;
+            margin: 0;
+            max-width: 850px;
+        }
+
+        .hero-description {
+            font-size: 21px;
+            line-height: 1.6;
+            color: #666;
+            max-width: 700px;
             margin-top: 30px;
         }
 
-        .links a {
-            margin-right: 20px;
+        .hero-links {
+            display: flex;
+            gap: 14px;
+            margin-top: 38px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 11px 18px;
+            border: 1px solid #d6d6d6;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 600;
+            background: white;
+        }
+
+        .button:hover {
+            border-color: #999;
+            transform: translateY(-1px);
+        }
+
+        /* ---------------- SECTIONS ---------------- */
+
+        section {
+            padding: 90px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 38px;
+            letter-spacing: -0.035em;
+            line-height: 1.15;
+            margin: 0 0 25px;
+        }
+
+        .section-intro {
+            color: #666;
+            max-width: 680px;
+            font-size: 17px;
+        }
+
+        /* ---------------- BUILD GRID ---------------- */
+
+        .build-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 45px;
+        }
+
+        .build-card {
+            padding: 28px;
+            background: white;
+            border: 1px solid #e4e4e4;
+            border-radius: 10px;
+            transition: 0.2s ease;
+        }
+
+        .build-card:hover {
+            transform: translateY(-3px);
+            border-color: #bbb;
+        }
+
+        .build-card h3 {
+            margin: 0 0 8px;
+            font-size: 19px;
+        }
+
+        .build-card p {
+            margin: 0;
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* ---------------- THINKING ---------------- */
+
+        .thinking-list {
+            margin-top: 40px;
+            display: grid;
+            gap: 0;
+        }
+
+        .thinking-item {
+            padding: 22px 0;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 20px;
+        }
+
+        .thinking-item span {
+            color: #999;
+            margin-right: 12px;
+        }
+
+        /* ---------------- WORK ---------------- */
+
+        .work-list {
+            margin-top: 40px;
+        }
+
+        .work-item {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .work-type {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .work-item h3 {
+            margin: 0 0 8px;
+            font-size: 22px;
+        }
+
+        .work-item p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* ---------------- NOTES ---------------- */
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 40px;
+        }
+
+        .note {
+            padding: 25px;
+            background: white;
+            border: 1px solid #e4e4e4;
+            border-radius: 10px;
+        }
+
+        .note h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+        .note p {
+            margin: 0;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid #e5e5e5;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a:hover {
+            color: #111;
+        }
+
+        /* ---------------- MOBILE ---------------- */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .build-grid,
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
+
 <body>
 
-    <h1>Thinking Better</h1>
+    <!-- NAVIGATION -->
 
-    <p class="subtitle">
-        AI/ML Engineer · Builder · Learner
-    </p>
+    <nav>
+        <div class="container nav-inner">
 
-    <p>
-        I'm Athul, a Lead AI/ML Engineer working on machine learning,
-        forecasting, optimization, generative AI and intelligent systems.
-    </p>
+            <a href="#" class="logo">
+                Thinking Better
+            </a>
 
-    <h2>What I'm exploring</h2>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#build">Build</a>
+                <a href="#thinking">Thinking</a>
+                <a href="#notes">Notes</a>
+            </div>
 
-    <ul>
-        <li>Machine Learning & AI</li>
-        <li>Statistical and Bayesian modelling</li>
-        <li>LLMs and agentic systems</li>
-        <li>Problem solving and systematic thinking</li>
-        <li>Building reliable AI systems</li>
-    </ul>
+        </div>
+    </nav>
 
-    <h2>Projects</h2>
 
-    <p>
-        Coming soon.
-    </p>
+    <main>
 
-    <h2>Writing</h2>
+        <!-- HERO -->
 
-    <p>
-        Coming soon.
-    </p>
+        <header class="hero">
+            <div class="container">
 
-    <div class="links">
-        <a href="https://github.com/thinking-better">GitHub</a>
-    </div>
+                <div class="eyebrow">
+                    Athul · Lead AI/ML Engineer
+                </div>
+
+                <h1>
+                    Thinking better.<br>
+                    Building better systems.
+                </h1>
+
+                <p class="hero-description">
+                    I build intelligent systems and study how to solve
+                    difficult problems systematically — through machine
+                    learning, statistics, software and deliberate practice.
+                </p>
+
+                <div class="hero-links">
+                    <a class="button" href="#build">
+                        Explore my work
+                    </a>
+
+                    <a class="button" href="#thinking">
+                        What I'm thinking about
+                    </a>
+                </div>
+
+            </div>
+        </header>
+
+
+        <!-- ABOUT -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-label">
+                    About
+                </div>
+
+                <h2>
+                    Building intelligence,
+                    one system at a time.
+                </h2>
+
+                <p class="section-intro">
+                    My work sits at the intersection of machine learning,
+                    statistical modelling, data engineering and AI systems.
+                    I am particularly interested in turning ambiguous
+                    problems into structured, reproducible processes.
+                </p>
+
+                <p class="section-intro">
+                    This website is also an experiment: a place to document
+                    what I build, what I learn, what fails, and how my
+                    understanding changes over time.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- WHAT I BUILD -->
+
+        <section id="build">
+
+            <div class="container">
+
+                <div class="section-label">
+                    What I build
+                </div>
+
+                <h2>
+                    Systems, models and ideas.
+                </h2>
+
+                <div class="build-grid">
+
+                    <div class="build-card">
+                        <h3>Machine Learning</h3>
+                        <p>
+                            Predictive modelling, feature engineering,
+                            model evaluation and production ML systems.
+                        </p>
+                    </div>
+
+                    <div class="build-card">
+                        <h3>Statistical Modelling</h3>
+                        <p>
+                            Bayesian models, hierarchical models,
+                            causal reasoning and uncertainty.
+                        </p>
+                    </div>
+
+                    <div class="build-card">
+                        <h3>Forecasting</h3>
+                        <p>
+                            Time-series forecasting, demand modelling,
+                            hierarchical forecasting and ensembles.
+                        </p>
+                    </div>
+
+                    <div class="build-card">
+                        <h3>AI Systems</h3>
+                        <p>
+                            LLM applications, retrieval, agents and
+                            intelligent systems that operate over data.
+                        </p>
+                    </div>
+
+                    <div class="build-card">
+                        <h3>Optimization</h3>
+                        <p>
+                            Decision systems that translate predictions
+                            into actionable business outcomes.
+                        </p>
+                    </div>
+
+                    <div class="build-card">
+                        <h3>Data Systems</h3>
+                        <p>
+                            Reliable pipelines, feature platforms and
+                            model-ready datasets.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- THINKING -->
+
+        <section id="thinking">
+
+            <div class="container">
+
+                <div class="section-label">
+                    Thinking
+                </div>
+
+                <h2>
+                    Questions I'm trying to answer.
+                </h2>
+
+                <div class="thinking-list">
+
+                    <div class="thinking-item">
+                        <span>01</span>
+                        How do I approach difficult problems systematically?
+                    </div>
+
+                    <div class="thinking-item">
+                        <span>02</span>
+                        How do we build machine learning systems that can be trusted?
+                    </div>
+
+                    <div class="thinking-item">
+                        <span>03</span>
+                        How can statistical reasoning improve modern AI?
+                    </div>
+
+                    <div class="thinking-item">
+                        <span>04</span>
+                        How do we turn learning into a repeatable process?
+                    </div>
+
+                    <div class="thinking-item">
+                        <span>05</span>
+                        What does it mean to think clearly?
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SELECTED WORK -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="section-label">
+                    Selected work
+                </div>
+
+                <h2>
+                    Things I'm building.
+                </h2>
+
+                <div class="work-list">
+
+                    <div class="work-item">
+
+                        <div class="work-type">
+                            AI / ML Platform
+                        </div>
+
+                        <div>
+                            <h3>
+                                Trade Promotion Modelling Platform
+                            </h3>
+
+                            <p>
+                                Automating data preparation, feature
+                                engineering, hierarchical Bayesian modelling,
+                                elasticity estimation and model evaluation.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="work-item">
+
+                        <div class="work-type">
+                            Forecasting
+                        </div>
+
+                        <div>
+                            <h3>
+                                Intelligent Forecasting Systems
+                            </h3>
+
+                            <p>
+                                Combining statistical and machine learning
+                                approaches to build scalable forecasting
+                                systems.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="work-item">
+
+                        <div class="work-type">
+                            AI Systems
+                        </div>
+
+                        <div>
+                            <h3>
+                                Data & AI Agents
+                            </h3>
+
+                            <p>
+                                Exploring systems that can understand data,
+                                reason over it and interact with analytical
+                                workflows.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTES -->
+
+        <section id="notes">
+
+            <div class="container">
+
+                <div class="section-label">
+                    Knowledge
+                </div>
+
+                <h2>
+                    Notes from the journey.
+                </h2>
+
+                <p class="section-intro">
+                    A growing collection of technical notes, ideas,
+                    experiments, books and mental models.
+                </p>
+
+                <div class="notes-grid">
+
+                    <div class="note">
+                        <h3>Machine Learning</h3>
+                        <p>
+                            Models, algorithms, experiments and lessons.
+                        </p>
+                    </div>
+
+                    <div class="note">
+                        <h3>Statistics</h3>
+                        <p>
+                            Probability, inference, Bayesian thinking
+                            and uncertainty.
+                        </p>
+                    </div>
+
+                    <div class="note">
+                        <h3>AI</h3>
+                        <p>
+                            LLMs, agents, representation learning and
+                            intelligent systems.
+                        </p>
+                    </div>
+
+                    <div class="note">
+                        <h3>Systems</h3>
+                        <p>
+                            Software architecture, data systems and
+                            engineering principles.
+                        </p>
+                    </div>
+
+                    <div class="note">
+                        <h3>Problem Solving</h3>
+                        <p>
+                            Frameworks for approaching difficult problems.
+                        </p>
+                    </div>
+
+                    <div class="note">
+                        <h3>Books & Ideas</h3>
+                        <p>
+                            Notes and ideas worth remembering.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div>
+                © 2026 Athul · Thinking Better
+            </div>
+
+            <div class="footer-links">
+                <a href="https://github.com/thinking-better">
+                    GitHub
+                </a>
+
+                <a href="#">
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
 
 </body>
+
 </html>
