@@ -18,6 +18,10 @@ collections:
     output: true
     permalink: /notes/:name/
     
+  books:
+    output: true
+    permalink: /books/:name/
+    
 exclude:
   - README.md
   - Gemfile
