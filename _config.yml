@@ -1,0 +1,19 @@
+title: Thinking Better
+description: >
+  Athul's notes on artificial intelligence, machine learning,
+  systems, problem solving and learning.
+
+url: "https://thinking-better.github.io"
+baseurl: ""
+
+author:
+  name: Athul
+
+markdown: kramdown
+
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
