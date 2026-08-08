@@ -9,9 +9,7 @@ tags:
   - statistics
 
 related:
-  - Q-Q Plots
-  - Regression
-  - Heteroscedasticity
+  - qq-plots
 
 status: evergreen
 ---
