@@ -2,10 +2,18 @@
 layout: default
 title: Residual Plots
 category: Statistics
+
 tags:
   - regression
   - diagnostics
   - statistics
+
+related:
+  - Q-Q Plots
+  - Regression
+  - Heteroscedasticity
+
+status: evergreen
 ---
 
 <div class="container">
