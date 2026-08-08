@@ -1,6 +1,8 @@
 ---
 layout: note
 title: Residual Plots
+slug: residual-plots
+
 category: Statistics
 
 tags:
