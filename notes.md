@@ -25,31 +25,66 @@ permalink: /notes/
         </p>
 
 
-        <div class="list">
+        {% assign categories = site.notes
+            | map: "category"
+            | uniq
+            | sort %}
 
-            {% assign notes = site.notes | sort: "title" %}
 
-            {% for note in notes %}
+        {% for category in categories %}
 
-                <div class="list-item">
+            <div class="note-category-section">
 
-                    <h3>
-                        <a href="{{ note.url | relative_url }}">
-                            {{ note.title }}
-                        </a>
-                    </h3>
+                <div class="section-label">
+                    {{ category }}
+                </div>
 
-                    {% if note.category %}
-                        <p>
-                            {{ note.category }}
-                        </p>
-                    {% endif %}
+
+                <div class="list">
+
+                    {% assign category_notes = site.notes
+                        | where: "category", category
+                        | sort: "title" %}
+
+
+                    {% for note in category_notes %}
+
+                        <div class="list-item">
+
+                            <h3>
+
+                                <a href="{{ note.url | relative_url }}">
+                                    {{ note.title }}
+                                </a>
+
+                            </h3>
+
+
+                            {% if note.tags %}
+
+                                <p>
+
+                                    {% for tag in note.tags %}
+
+                                        {{ tag }}{% unless forloop.last %}
+                                        ·
+                                        {% endunless %}
+
+                                    {% endfor %}
+
+                                </p>
+
+                            {% endif %}
+
+                        </div>
+
+                    {% endfor %}
 
                 </div>
 
-            {% endfor %}
+            </div>
 
-        </div>
+        {% endfor %}
 
     </section>
 
