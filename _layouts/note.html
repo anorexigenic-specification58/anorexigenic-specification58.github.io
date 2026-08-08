@@ -54,21 +54,32 @@ layout: default
     {% if page.related %}
 
         <section class="related-notes">
-
+    
             <h3>Related</h3>
-
+    
             <ul>
-
-                {% for related in page.related %}
-
-                    <li>{{ related }}</li>
-
+    
+                {% for related_slug in page.related %}
+    
+                    {% assign related_note = site.notes
+                        | where: "slug", related_slug
+                        | first %}
+    
+                    {% if related_note %}
+    
+                        <li>
+                            <a href="{{ related_note.url | relative_url }}">
+                                {{ related_note.title }}
+                            </a>
+                        </li>
+    
+                    {% endif %}
+    
                 {% endfor %}
-
+    
             </ul>
-
+    
         </section>
-
+    
     {% endif %}
-
 </div>
