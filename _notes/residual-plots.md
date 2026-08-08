@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: note
 title: Residual Plots
 category: Statistics
 
@@ -16,67 +16,31 @@ related:
 status: evergreen
 ---
 
-<div class="container">
+A residual is the difference between an observed value
+and the value predicted by a model.
 
-    <div class="page-header">
+## What is a residual?
 
-        <a class="back-link" href="/notes/">
-            ← Notes
-        </a>
+For an observation with actual value *y* and predicted
+value *ŷ*, the residual is:
 
-        <h1>{{ page.title }}</h1>
+**e = y − ŷ**
 
-    </div>
+## Why plot residuals?
 
+Residual plots help us determine whether the assumptions
+behind a model are reasonable and whether the model is
+systematically missing structure in the data.
 
-    <section>
+## What I look for
 
-        <p>
-            A residual is the difference between an observed value
-            and the value predicted by a model.
-        </p>
+- Non-linearity
+- Heteroscedasticity
+- Outliers
+- Clusters or unexplained structure
+- Patterns over time
 
+## My understanding
 
-        <h2>What is a residual?</h2>
-
-        <p>
-            For an observation with actual value
-            <em>y</em> and predicted value
-            <em>ŷ</em>, the residual is:
-        </p>
-
-        <p>
-            <strong>e = y − ŷ</strong>
-        </p>
-
-
-        <h2>Why plot residuals?</h2>
-
-        <p>
-            Residual plots help us determine whether the assumptions
-            behind a model are reasonable and whether the model is
-            systematically missing structure in the data.
-        </p>
-
-
-        <h2>What I look for</h2>
-
-        <ul>
-            <li>Non-linearity</li>
-            <li>Heteroscedasticity</li>
-            <li>Outliers</li>
-            <li>Clusters or unexplained structure</li>
-            <li>Patterns over time</li>
-        </ul>
-
-
-        <h2>My understanding</h2>
-
-        <p>
-            A useful way to think about a residual plot is that it
-            shows us what the model failed to explain.
-        </p>
-
-    </section>
-
-</div>
+A useful way to think about a residual plot is that it
+shows us what the model failed to explain.
