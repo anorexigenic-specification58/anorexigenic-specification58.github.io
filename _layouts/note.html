@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<div class="container">
+
+    <div class="page-header">
+
+        <a class="back-link" href="/notes/">
+            ← Notes
+        </a>
+
+        <h1>{{ page.title }}</h1>
+
+        {% if page.category %}
+            <p class="note-category">
+                {{ page.category }}
+            </p>
+        {% endif %}
+
+    </div>
+
+
+    <article class="note-content">
+
+        {{ content }}
+
+    </article>
+
+
+    {% if page.tags %}
+
+        <section class="note-meta">
+
+            <h3>Tags</h3>
+
+            <div class="tags">
+
+                {% for tag in page.tags %}
+
+                    <span class="tag">
+                        {{ tag }}
+                    </span>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+    {% endif %}
+
+
+    {% if page.related %}
+
+        <section class="related-notes">
+
+            <h3>Related</h3>
+
+            <ul>
+
+                {% for related in page.related %}
+
+                    <li>{{ related }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </section>
+
+    {% endif %}
+
+</div>
