@@ -8,6 +8,9 @@ tags:
   - diagnostics
   - distributions
 
+related:
+  - residual-plots
+
 status: developing
 ---
 
